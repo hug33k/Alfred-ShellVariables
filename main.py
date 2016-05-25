@@ -1,7 +1,8 @@
 # encoding: utf-8
 
 import sys
-from workflow import Workflow, ICON_WEB, ICON_ERROR, ICON_INFO
+import init
+from workflow import Workflow, ICON_ERROR, ICON_INFO
 from workflow.background import run_in_background, is_running
 
 def filterVariables(variable):
@@ -11,9 +12,20 @@ def filterVariables(variable):
 	return u' '.join(elements)
 
 def main(wf):
-	if len(wf.args) and "-u" in wf.args:
+	if len(wf.args) and wf.args[0] == "--update" and not is_running('update'):
 		cmd = ['/usr/bin/python', wf.workflowfile('init.py')]
 		run_in_background('update', cmd)
+	elif len(wf.args) and wf.args[0] == "--shell":
+		if len(wf.args) == 2 and wf.args[1] in init.shells:
+			wf.settings["shell"] = str(wf.args[1])
+		else:
+			for sh in init.shells:
+				wf.add_item(sh,
+							arg=sh,
+							valid=True,
+							icon=u'icon.png')
+			wf.send_feedback()
+			return
 	elif len(wf.args):
 		query = wf.args[0]
 	else:
@@ -28,7 +40,7 @@ def main(wf):
 		variables = wf.settings["data"]
 	except:
 		wf.add_item(title="List not initialized",
-					subtitle="You should run initVar",
+					subtitle="You should run sv init",
 					icon=ICON_ERROR)
 		wf.send_feedback()
 		return
@@ -39,7 +51,7 @@ def main(wf):
 					subtitle=variable["value"],
 					arg=variable["value"],
 					valid=True,
-					icon=ICON_WEB)
+					icon=u'icon.png')
 	wf.send_feedback()
 
 if __name__ == "__main__":

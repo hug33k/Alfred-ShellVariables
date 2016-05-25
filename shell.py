@@ -42,7 +42,6 @@ class Shell(object):
 			if not self._background:
 				self._cmd.wait()
 				stdout = self._cmd.stdout.read()
-				# stderr = self._cmd.stderr.read()
 				if self._cmd.returncode:
 					raise ShellError("Code " + str(self._cmd.returncode))
 				return stdout
