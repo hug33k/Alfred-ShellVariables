@@ -6,6 +6,8 @@ Get your shell's variables into Alfred
 
 Download [Alfred-ShellVariables.alfredworkflow](https://github.com/hug33k/Alfred-ShellVariables/releases/download/v0.2/Alfred-ShellVariables.alfredworkflow) and open it with Alfred.
 
+Available on [Packal](http://www.packal.org/workflow/shell-variables).
+
 ## Usage
 
 You must start by selecting your shell with ___sv shell__
