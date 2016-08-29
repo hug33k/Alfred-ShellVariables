@@ -10,7 +10,7 @@ Available on [Packal](http://www.packal.org/workflow/shell-variables).
 
 ## Usage
 
-You must start by selecting your shell with ___sv shell__
+You must start by selecting your shell with ___sv shell___.
 
 Then you can initialize data by typing ___sv init___.
 
