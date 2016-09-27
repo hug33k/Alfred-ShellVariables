@@ -4,7 +4,7 @@ Get your shell's variables into Alfred
 
 ## Installation
 
-Download [Alfred-ShellVariables.alfredworkflow](https://github.com/hug33k/Alfred-ShellVariables/releases/download/v0.2/Alfred-ShellVariables.alfredworkflow) and open it with Alfred.
+Download [Alfred-ShellVariables.alfredworkflow](https://github.com/hug33k/Alfred-ShellVariables/releases/download/v0.3/Alfred-ShellVariables.alfredworkflow) and open it with Alfred.
 
 ## Usage
 
@@ -18,15 +18,18 @@ You can now type ___$___, followed by an optional query, to find your shell vari
 
 - [x] Fish Shell
 - [x] Bash
-- [ ] ZSH
+- [x] ZSH
 
 ## TODO
-
-* ZSH integration
 
 You can make a PR or ask me for integrate another shell :)
 
 ## Changelogs
+
+###v0.3
+
+* Add ZSH support
+* Update shell support
 
 ###v0.2
 

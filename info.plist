@@ -10,6 +10,19 @@
 	<dict>
 		<key>65E57995-6ABE-4CD3-A336-6C263E780080</key>
 		<array/>
+		<key>88C5D01E-CA45-44E8-AE9D-DD12542F56EC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>031E6FA5-3C1C-42CA-BE2A-09DCB2E275CF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>90EC00B5-030E-47D2-A490-40514F074398</key>
 		<array>
 			<dict>
@@ -46,8 +59,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>992FAE5D-93FC-45A2-9E26-1E24A9FD3E82</key>
-		<array/>
 		<key>9D0E5065-0318-4297-A0BC-3F55703183AC</key>
 		<array>
 			<dict>
@@ -176,49 +187,6 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>sv init</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Please wait, initialization in progress</string>
-				<key>script</key>
-				<string>python main.py --update</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Initialize Shell variables</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>992FAE5D-93FC-45A2-9E26-1E24A9FD3E82</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
 				<string>sv shell</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
@@ -299,6 +267,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>sv init</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Initialize Shell variables</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>88C5D01E-CA45-44E8-AE9D-DD12542F56EC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -329,14 +318,14 @@
 			<key>xpos</key>
 			<integer>610</integer>
 			<key>ypos</key>
-			<integer>510</integer>
+			<integer>370</integer>
 		</dict>
 		<key>65E57995-6ABE-4CD3-A336-6C263E780080</key>
 		<dict>
 			<key>xpos</key>
 			<integer>610</integer>
 			<key>ypos</key>
-			<integer>370</integer>
+			<integer>240</integer>
 		</dict>
 		<key>73C7530A-F827-4010-9A51-F404DE6E591D</key>
 		<dict>
@@ -344,6 +333,13 @@
 			<integer>610</integer>
 			<key>ypos</key>
 			<integer>110</integer>
+		</dict>
+		<key>88C5D01E-CA45-44E8-AE9D-DD12542F56EC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>200</integer>
+			<key>ypos</key>
+			<integer>370</integer>
 		</dict>
 		<key>90EC00B5-030E-47D2-A490-40514F074398</key>
 		<dict>
@@ -356,13 +352,6 @@
 		<dict>
 			<key>xpos</key>
 			<integer>410</integer>
-			<key>ypos</key>
-			<integer>370</integer>
-		</dict>
-		<key>992FAE5D-93FC-45A2-9E26-1E24A9FD3E82</key>
-		<dict>
-			<key>xpos</key>
-			<integer>200</integer>
 			<key>ypos</key>
 			<integer>240</integer>
 		</dict>
@@ -378,7 +367,7 @@
 			<key>xpos</key>
 			<integer>200</integer>
 			<key>ypos</key>
-			<integer>370</integer>
+			<integer>240</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>

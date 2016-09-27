@@ -4,34 +4,48 @@ import sys
 import shell
 from workflow import Workflow, ICON_ERROR
 
-shells = ["fish", "bash"]
+shells = {
+	"fish": {
+		"cmd": ["/usr/local/bin/fish", "-c", "set"],
+		"replace": {},
+		"separator": " "
+	},
+	"bash": {
+		"cmd": ["/bin/bash", "-ic", "export"],
+		"replace": {"declare -x": ""},
+		"separator": "="
+	},
+	"zsh": {
+		"cmd": ["/bin/zsh", "-ic", "export"],
+		"replace": {},
+		"separator": "="
+	},
+}
 
 def getVariables(shellName):
 
-	def fish():
-		variables = sh.execute(["/usr/local/bin/fish", "-c", "set"])
-		variables = variables.split("\n")
-		result = []
-		for variable in variables:
-			if len(variable):
-				tmp = variable.split(" ")
-				result.append({"name": unicode(tmp[0].decode("utf-8")), "value": unicode(" ".join(tmp[1:]).decode("utf-8"))})
-		return result
+	def _getVars(cmd):
+		variables = sh.execute(cmd)
+		return variables.split(b"\n")
 
-	def bash():
-		variables = sh.execute(["/bin/bash", "-ic", "export"])
-		variables = variables.split("\n")
+	def _split(item, symbol):
+		tmp = item.split(symbol)
+		return {"name": unicode(tmp[0].decode("utf-8")), "value": unicode(symbol.join(tmp[1:]).decode("utf-8"))}
+
+	def execute(shellInfos):
+		variables = _getVars(shellInfos["cmd"])
 		result = []
 		for variable in variables:
 			if len(variable):
-				variable = variable.replace("declare -x", "")
-				tmp = variable.split("=")
-				result.append({"name": unicode(tmp[0].decode("utf-8")), "value": unicode("=".join(tmp[1:]).decode("utf-8"))})
+				for pattern in shellInfos["replace"]:
+					variable = variable.replace(pattern, shellInfos["replace"][pattern])
+				result.append(_split(variable, shellInfos["separator"]))
 		return result
 
 	sh = shell.Shell()
 	if shellName in shells:
-		return locals()[shellName]()
+		return execute(shells[shellName])
+	return None
 
 def main(wf):
 	try:
