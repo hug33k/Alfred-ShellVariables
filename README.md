@@ -28,17 +28,17 @@ You can make a PR or ask me for integrate another shell :)
 
 ## Changelogs
 
-###v0.3
+### v0.3
 
 * Add ZSH support
 * Update shell support
 
-###v0.2
+### v0.2
 
 * Add Shell selection
 * Rename actions (___sv *___)
 * Add Bash support
 
-###v0.1
+### v0.1
 
 * Initial release
